@@ -62,6 +62,6 @@ abstract class ActiveRecord implements ActiveRecordInterface
 
     public function update(UpdateInterface $updateInterface)
     {
-        return $updateInterface->update();
+        return $updateInterface->update($this);
     }
 }
