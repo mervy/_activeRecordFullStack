@@ -7,8 +7,11 @@
   
     "autoload": {
         "psr-4": {
-            "Mervy\\ActiveRecordFullStack\\": "app/"
-        }
+            "Mervy\\ActiveRecord\\": "app/"
+        },
+        "files": [
+            "app/helpers/Helper.php"
+        ]
     }, 
      "require": {
         "php": ">=8.1"
