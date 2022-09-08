@@ -2,9 +2,10 @@
 
 namespace Mervy\ActiveRecord\database\activerecord;
 
-use Mervy\ActiveRecord\database\interfaces\ActiveRecordInterface;
-use Mervy\ActiveRecord\database\interfaces\UpdateInterface;
 use ReflectionClass;
+use Mervy\ActiveRecord\database\interfaces\InsertInterface;
+use Mervy\ActiveRecord\database\interfaces\UpdateInterface;
+use Mervy\ActiveRecord\database\interfaces\ActiveRecordInterface;
 
 abstract class ActiveRecord implements ActiveRecordInterface
 {
@@ -58,6 +59,11 @@ abstract class ActiveRecord implements ActiveRecordInterface
     public function __get($attribute)
     {
         return $this->attributes[$attribute];
+    }
+
+    public function insert(InsertInterface $insertInterface)
+    {
+        return $insertInterface->insert($this);
     }
 
     public function update(UpdateInterface $updateInterface)

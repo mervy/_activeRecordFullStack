@@ -1,6 +1,7 @@
 <?php
 
 use Mervy\ActiveRecord\database\models\Author;
+use Mervy\ActiveRecord\database\activerecord\Insert;
 use Mervy\ActiveRecord\database\activerecord\Update;
 
 require '../vendor/autoload.php';
@@ -12,4 +13,4 @@ $user->firstName = "Mary";
 $user->lastName = "Johnson Larry";
 $user->id = 1;
 
-$user->update(new Update);
+echo $user->insert(new Insert);
