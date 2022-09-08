@@ -10,7 +10,7 @@
             "Mervy\\ActiveRecord\\": "app/"
         },
         "files": [
-            "app/helpers/Helper.php"
+            "app/helpers/helper.php"
         ]
     }, 
      "require": {

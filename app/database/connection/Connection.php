@@ -13,7 +13,7 @@ class Connection
     {
         try {
             if (!static::$pdo) {
-                static::$pdo = new PDO("mysql:host=localhost;dbname=mvc_2021", "root", "", [
+                static::$pdo = new PDO("mysql:host=localhost;dbname=_mvc2021", "root", "", [
                     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ
                 ]);
@@ -22,7 +22,7 @@ class Connection
             return static::$pdo;
             
         } catch (PDOException $th) {
-            var_dump($th->getMessage);
+            var_dump($th->getMessage());
         }
     }
 }

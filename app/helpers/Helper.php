@@ -6,6 +6,13 @@ function setInitialErrorsPhp()
     ini_set("display_errors", 1);
 }
 
+function formatException(Throwable $throw)
+{
+    echo "Erro no arquivo <strong>{$throw->getFile()}</strong><br> 
+            na linha <strong>{$throw->getLine()}</strong><br>
+                com a mensagem <strong>{$throw->getMessage()}</strong>";
+}
+
 function dd($var, $type)
 {
     echo "<pre>";
@@ -21,11 +28,11 @@ function teste()
 {
     $tt = 'boddu';
     if (str_ends_with($tt, 'y')) {
-                echo rtrim($tt, 'y') . 'ies';
+        echo rtrim($tt, 'y') . 'ies';
     } else {
         echo $tt . 's';
     }
 
     //if (substr($tt, -1) == "y") {
-       
+
 }

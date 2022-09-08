@@ -1,2 +1,3 @@
 vendor
+views/
 database.sql

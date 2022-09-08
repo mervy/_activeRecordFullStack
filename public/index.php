@@ -9,11 +9,10 @@ require '../vendor/autoload.php';
 
 setInitialErrorsPhp();
 
-$user = new Author;
-$user->firstName = "Mary";
-$user->lastName = "Johnson Larry";
-$user->id = 1;
+$author = new Author;
+$author->firstName = "Rogério";
+$author->lastName = "Soares";
+$author->email = 'rgrsoares@yahoo.com.br';
+$author->status = 1;
 
-echo $user->execute(new Insert);
-echo $user->execute(new Update);
-echo $user->execute(new Find);
+var_dump($author->execute(new Update(field:'id', value:1)));
