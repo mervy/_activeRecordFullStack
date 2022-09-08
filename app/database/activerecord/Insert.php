@@ -3,12 +3,15 @@
 namespace Mervy\ActiveRecord\database\activerecord;
 
 use Mervy\ActiveRecord\database\interfaces\ActiveRecordInterface;
-use Mervy\ActiveRecord\database\interfaces\InsertInterface;
+use Mervy\ActiveRecord\database\interfaces\ActiveRecordExecuteInterface;
 
-class Insert implements InsertInterface
+class Insert implements ActiveRecordExecuteInterface
 {
-    public function insert(ActiveRecordInterface $activeRecordInterface)
+    public function execute(ActiveRecordInterface $activeRecordInterface)
     {
-        return 'insert';
+        echo 'INSERT <br>';
+        dd($activeRecordInterface->getAttributes(), 'v');
+        echo '<hr>';
+
     }
 }

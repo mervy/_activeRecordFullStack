@@ -3,9 +3,8 @@
 namespace Mervy\ActiveRecord\database\activerecord;
 
 use ReflectionClass;
-use Mervy\ActiveRecord\database\interfaces\InsertInterface;
-use Mervy\ActiveRecord\database\interfaces\UpdateInterface;
 use Mervy\ActiveRecord\database\interfaces\ActiveRecordInterface;
+use Mervy\ActiveRecord\database\interfaces\ActiveRecordExecuteInterface;
 
 abstract class ActiveRecord implements ActiveRecordInterface
 {
@@ -61,13 +60,8 @@ abstract class ActiveRecord implements ActiveRecordInterface
         return $this->attributes[$attribute];
     }
 
-    public function insert(InsertInterface $insertInterface)
+    public function execute(ActiveRecordExecuteInterface $activeRecordExecuteInterface)
     {
-        return $insertInterface->insert($this);
-    }
-
-    public function update(UpdateInterface $updateInterface)
-    {
-        return $updateInterface->update($this);
+        return $activeRecordExecuteInterface->execute($this);
     }
 }
