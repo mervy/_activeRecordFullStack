@@ -10,7 +10,7 @@ use Mervy\ActiveRecord\database\interfaces\ActiveRecordExecuteInterface;
 
 class Update implements ActiveRecordExecuteInterface
 {
-    public function __construct(private string $field, private string $value)
+    public function __construct(private string $field, private string|int $value)
     {
     }
     public function execute(ActiveRecordInterface $activeRecordInterface)
