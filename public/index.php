@@ -2,6 +2,7 @@
 
 use Mervy\ActiveRecord\database\models\Author;
 use Mervy\ActiveRecord\database\activerecord\Delete;
+use Mervy\ActiveRecord\database\activerecord\FindBy;
 
 require '../vendor/autoload.php';
 
@@ -16,6 +17,6 @@ $author->password = password_hash('Master,-', PASSWORD_BCRYPT);
 $author->status = 1;
 */
 
-//var_dump($author->execute(new Update(field:'id', value:1)));
-echo $author->execute(new Delete(field:'id', value:503));
+//($author->execute(new Update(field:'id', value:1)));
+print_r($author->execute(new FindBy(field:'id', value:5, fields: 'id, firstName, password')));
 
